@@ -4,11 +4,28 @@
 package org.example;
 
 public class App {
-    public String getGreeting() {
-        return "Hello World!";
-    }
+  public String getGreeting() {
+    return "Hello World!";
+  }
 
-    public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
-    }
+  public static void main(String[] args) {
+    Calculate calculate = new Calculate();
+    int x = 2, y = 3, start = 1, end = 10, sum = 0;
+    System.out.println(new App().getGreeting());
+    sum = calculate.sum(x, y);
+    System.out
+        .println(
+            String.format("Sum of %d and %d is %d. Average is %.1f.", x, y, sum, calculate.average(sum, 2)));
+    sum = calculate.sumBetween(start, end);
+    System.out
+        .println(
+            String.format("Sum of %d and %d is %d. Average is %.1f.", x, y, sum,
+                calculate.average(sum, end - start + 1)));
+    System.out
+        .println(
+            String.format("Sum of odd of %d and %d is %d.", start, end, calculate.sumBetweenOnlyOdd(start, end)));
+    System.out
+        .println(
+            String.format("Sum of even of %d and %d is %d.", start, end, calculate.sumBetweenOnlyEven(start, end)));
+  }
 }
