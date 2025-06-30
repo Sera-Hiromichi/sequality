@@ -14,6 +14,12 @@ public class AppTest {
     App classUnderTest = new App(); // テスト対象のインスタンス
     assertNotNull("app should have a greeting", classUnderTest.getGreeting()); // アサーション：実行結果が想定通りであることを示す
   }
+
+  @Test
+  public void testAppReturnHelloWorld() {
+    App classUnderTest = new App();
+    assertEquals("Hello World!", classUnderTest.getGreeding());
+  }
 }
 
 // ＠Test…Testアノテーション：テスト用のコードであることを示す
